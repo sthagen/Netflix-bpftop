@@ -11,7 +11,7 @@
 To download the latest x86_64 release of `bpftop`, use the following command:
 
 ```bash
-curl -fLJ https://github.com/Netflix/bpftop/releases/latest/download/bpftop-x86_64-unknown-linux-gnu -o bpftop && chmod +x bpftop
+curl -fLJ https://github.com/jfernandez/bpftop/releases/latest/download/bpftop-x86_64-unknown-linux-gnu -o bpftop && chmod +x bpftop
 ```
 
 or install via your distribution's package manager:
@@ -151,7 +151,6 @@ sudo dnf install -y zlib-devel elfutils-libelf-devel clang libbpf-devel
 
 ### Build Instructions
 
-**For native builds:**
 ```bash
 # Development build
 cargo build
@@ -159,23 +158,6 @@ cargo build
 # Release build
 cargo build --release
 ```
-
-**For cross-compilation:**
-1. Install and setup [cross](https://github.com/cross-rs/cross):
-   ```bash
-   cargo install cross --git https://github.com/cross-rs/cross
-   ```
-
-2. Build for target architectures:
-   ```bash
-   # x86_64
-   cross build --release --target x86_64-unknown-linux-gnu
-   
-   # ARM64
-   cross build --release --target aarch64-unknown-linux-gnu
-   ```
-
-Note: Cross-compilation builds may take 15+ minutes on first run due to Docker image building.
 
 ## Troubleshooting
 
@@ -215,3 +197,7 @@ The logs include information about:
 - Kernel compatibility checks
 - BPF statistics enablement method used
 - Any errors or warnings encountered
+
+## Project History
+
+This repository was formerly maintained by Netflix. It is now an independent project maintained by Jose Fernandez. Netflix is no longer affiliated with this tool's development.
